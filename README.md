@@ -25,8 +25,12 @@ make a "simple map" using leaflet and
 1. make the map
 
  ```R
- leaflet(data6) %>% addTiles() %>%
-  addCircleMarkers(
+ leaflet(data6, width = 1920, height = 1080,) %>%  
+ addTiles() %>%
+ setView(lng = -123.251,
+         lat = 49.263,
+         zoom = 16) %>%
+ addCircleMarkers(
     lng = ~long, lat = ~lat,
     radius = 1,
     color = I(data6$color),
