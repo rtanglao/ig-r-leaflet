@@ -27,9 +27,9 @@ make a "simple map" using leaflet and
  ```R
  leaflet(data6, width = 1920, height = 1080,) %>%  
  addTiles() %>%
- setView(lng = -123.251,
-         lat = 49.263,
-         zoom = 16) %>%
+ setView(lng = -123.1188747,
+         lat = 49.2780045,
+         zoom = 14) %>%
  addCircleMarkers(
     lng = ~long, lat = ~lat,
     radius = 1,
