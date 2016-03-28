@@ -13,6 +13,9 @@ make a "simple map" using leaflet and
  library(leaflet)
  install.packages("magrittr")
  library(magrittr)
+ install.packages("webshot")
+ library(webshot)
+ library(htmlwidgets)
  ```
  
 1. load data
@@ -25,7 +28,7 @@ make a "simple map" using leaflet and
 1. make the map
 
  ```R
- leaflet(data6, width = 1920, height = 1080,) %>%  
+ m <- leaflet(data6, width = 1920, height = 1080,) %>%  
  addProviderTiles("CartoDB.DarkMatterNoLabels") %>%
  setView(lng = -123.1188747,
          lat = 49.2780045,
@@ -37,3 +40,11 @@ make a "simple map" using leaflet and
     stroke = FALSE, fillOpacity = 0.5
   )
  ```
+ 
+ 2. save to PNG
+
+  ```R
+  saveWidget(m, 'temp.html', selfcontained = FALSE)
+  webshot('temp.html', file='28march2016-ig-van-cartodbdarkmatternolables-topcolour.png',
+  cliprect = 'viewport')
+  ```
