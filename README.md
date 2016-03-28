@@ -26,7 +26,7 @@ make a "simple map" using leaflet and
 
  ```R
  leaflet(data6, width = 1920, height = 1080,) %>%  
- addTiles() %>%
+ addProviderTiles("CartoDB.DarkMatterNoLabels") %>%
  setView(lng = -123.1188747,
          lat = 49.2780045,
          zoom = 14) %>%
